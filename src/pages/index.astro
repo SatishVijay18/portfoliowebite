@@ -1,0 +1,121 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+---
+
+<Layout title="Portfolio">
+  <main class="backdrop-blur-sm">
+    <div class="flex justify-center items-center pt-44">
+      <h1 class="name-placeholder">Satish Vijay</h1>
+    </div>
+
+    <p class="rotatingText">
+      <span class="rotatingText-adjective">Gamer</span>
+      <span class="rotatingText-adjective">Guitarist</span>
+      <span class="rotatingText-adjective">Frontend Dev 👾</span>
+    </p>
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+    height: 88%;
+  }
+
+  h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 2rem;
+    padding: 0;
+  }
+  .rotatingText {
+    font-family: "Georgia", serif;
+    font-style: italic;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .rotatingText-adjective {
+    opacity: 0;
+    font-family: "Open Sans", sans-serif;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    left: 0;
+    margin-bottom: 0;
+    margin-top: 50px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    text-transform: uppercase;
+    bottom: 12rem;
+  }
+  @keyframes rotate {
+    0% {
+      opacity: 0;
+      transform: translate3d(0, 50px, 0);
+    }
+
+    20%,
+    80% {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translate3d(0, -25px, 0);
+    }
+  }
+  @keyframes rotate-last {
+    0% {
+      opacity: 0;
+      transform: translate3d(0, 50px, 0);
+    }
+
+    50%,
+    100% {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  .rotatingText-adjective:nth-of-type(1) {
+    animation-name: rotate;
+    animation-duration: 1.5s;
+    animation-delay: 0.5s;
+  }
+
+  .rotatingText-adjective:nth-of-type(2) {
+    animation-name: rotate;
+    animation-duration: 1.5s;
+    animation-delay: 1.75s;
+  }
+
+  .rotatingText-adjective:nth-of-type(3) {
+    animation-name: rotate-last;
+    animation-duration: 1.5s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+  }
+</style>
