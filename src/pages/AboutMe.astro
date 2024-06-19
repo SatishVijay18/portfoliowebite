@@ -7,7 +7,7 @@ import Layout from "../layouts/Layout.astro";
     <div class="home-page-wrapper flex justify-around h-full">
       <div class="text-section h-full flex flex-col justify-center">
         <div class="small-about-me-section mx-8 mb-2">
-          <h1 class="text-6xl">Hello, my name is Satish Vijay</h1>
+          <h1 class="intro-text text-6xl">Hello, my name is Satish Vijay</h1>
           <h4>
             I am frontend developer who is currently based in Chennai, India
           </h4>
@@ -176,13 +176,52 @@ import Layout from "../layouts/Layout.astro";
         </div>
       </div>
       <div class="img w-[40%] flex justify-center">
-        <img
+        <!-- <img
           src="../../public/placeholder-bg.jpg"
           class="rounded-xl h-[30rem] w-[24rem] mt-12 mr-12"
-        />
+        /> -->
+        <div
+          class="tenor-gif-embed h-[30rem] w-[24rem] mt-12 mr-12"
+          data-postid="3845002910700718184"
+          data-share-method="host"
+          data-aspect-ratio="1"
+          data-width="100%"
+        >
+          <a href="https://tenor.com/view/racoon-pedro-gif-3845002910700718184"
+            >Racoon Pedro GIF</a
+          >from <a href="https://tenor.com/search/racoon-gifs">Racoon GIFs</a>
+        </div>
+        <script type="text/javascript" async src="https://tenor.com/embed.js"
+        ></script>
       </div>
     </div>
   </div>
 </Layout>
+<style>
+  .intro-text {
+    animation:
+      type 1.5s steps(90) 1.5s 1 normal both,
+      cursor 1s step-end infinite;
+    overflow: hidden;
+    white-space: nowrap;
+    background: -webkit-linear-gradient(25deg, #0d0000, #333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
-6
+  @keyframes type {
+    from {
+      width: 0;
+    }
+
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes cursor {
+    50% {
+      border-color: transparent;
+    }
+  }
+</style>
